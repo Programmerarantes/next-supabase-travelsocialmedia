@@ -5,9 +5,9 @@ import Logout from "./Logout";
 
 const Navbar = async () => {
 
-  const supabase = createClient()
+  const supabase = await createClient()
 
-  const { data: {user}} = await (await supabase).auth.getUser()
+  const { data: {user}} = await supabase.auth.getUser()
   return (
     <nav className="border-b bg-background w-full flex items-center">
       <div className="flex w-full items-center justify-between my-4">
